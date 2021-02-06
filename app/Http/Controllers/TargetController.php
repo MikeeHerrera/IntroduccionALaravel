@@ -15,8 +15,8 @@ class TargetController extends Controller
     public function data(){
         $notes = DB::table('targets')->get();
         // return json_encode(['data' => $notes]);
-       echo($notes);
-        return view('index',['data'=>$notes]);
+    //    echo($notes);
+        return view('create',['data'=>$notes]);
         
     }
     public function eliminar(){
@@ -38,11 +38,21 @@ class TargetController extends Controller
             'name' => $request->name,
             'ranking' => $request->ranking
         ]);
-        dd($request -> all());
+        // dd($request -> all());
 
-        return view('create');
+        return redirect('create');
 
         //  echo ('hola');
     }
     
+
+    public function delete($id) {
+        $notes = DB::table('targets')->delete($id);
+        return redirect('index');
+    }
+
+    public function deleteC($id) {
+        $notes = DB::table('targets')->delete($id);
+        return redirect('create');
+    }
 }

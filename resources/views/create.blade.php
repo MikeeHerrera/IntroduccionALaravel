@@ -38,13 +38,19 @@
              
   <table class="table table-hover">
     <thead>
-      <tr>
-        <th>Target</th>
-        <th>Rank</th>
-        <th>Action</th>
-      </tr>
+    @foreach($data as $a) 
+
+<tr>
+  <td>{{$a->name}}</td>
+  <td>{{$a->ranking}}</td>
+  <td class="action_td">
+      <a href="#"><button type="button" class="btn btn-info">Edit</button></a>
+      <a  href="{{route('index',$a->id)}}" ><button  type="button" class="btn btn-danger">Delete</button></a>
+  </td>
+</tr>
+@endforeach
     </thead>
-    <tbody>
+    <!-- <tbody>
       <tr>
         <td>To do list....To do list....To do list....To do list....To do list....To do list....</td>
         <td>01</td>
@@ -93,7 +99,7 @@
             <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
         </td>
       </tr>
-    </tbody>
+    </tbody> -->
   </table>
 
   <ul class="pagination">

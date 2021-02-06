@@ -36,10 +36,20 @@ Route::get('democontroller2','DemoController@pokemon2');
 Route::get('index','TargetController@data');
 
 
+//eliminar point de target
+Route::get('index/{id}','TargetController@delete')->name('index');
+//end
+
 Route::get('create','TargetController@create');
 Route::post('create','TargetController@store');
+Route::get('create','TargetController@data');
 
 Route::get('edit','TargetController@edit');
+
+
+//delete para create
+Route::get('create/{id}','TargetController@deleteC')->name('create');
+
 
 // Route::get('index','TargetController@index', function () {
 

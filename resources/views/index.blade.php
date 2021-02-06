@@ -14,7 +14,7 @@
         <td>{{$a->ranking}}</td>
         <td class="action_td">
             <a href="#"><button type="button" class="btn btn-info">Edit</button></a>
-            <a href="#"><button onclick = "eliminar();" type="button" class="btn btn-danger">Delete</button></a>
+            <a  href="{{route('index',$a->id)}}" ><button  type="button" class="btn btn-danger">Delete</button></a>
         </td>
       </tr>
       @endforeach
