@@ -6,15 +6,24 @@
 
   <div class="container">
 
-    <form action="create" method="POST">
-      
-      <button type="submit" class="btn btn-primary right action_submit">Create</button>
+    <form action="/create" method="POST">
+    <div class="alert alert-danger ">
+    @foreach ($errors->all() as $messages)
+<li>
+{{$messages}}
+</li>
+@endforeach
 
+    </div>
+     
+
+      <button type="submit" class="btn btn-primary right action_submit">Create</button>
+       @csrf
       <div class="clearfix"></div>
       
       <div class="form-group">
-        <label for="usr">Target:</label>
-        <input type="text" class="form-control" id="usr" name="target">
+        <label for="usr">Name:</label>
+        <input type="text" class="form-control" id="usr" name="name">
       </div>
       <div class="form-group">
         <label for="pwd">Ranking:</label>

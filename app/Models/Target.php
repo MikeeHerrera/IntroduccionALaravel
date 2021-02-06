@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Target extends Model
 {
     use HasFactory;
+    protected $fillable =['name','ranking'];
 }

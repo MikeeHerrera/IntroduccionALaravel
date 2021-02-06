@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Target;
 use Illuminate\Http\Request;
 use DB;
+use App\Http\Requests\TargetRequest;
 class TargetController extends Controller
 {
     public function index(){
@@ -30,8 +31,18 @@ class TargetController extends Controller
         return view('edit');
     }
 
-    public function store(){
-         echo ('hola');
+    public function store(TargetRequest $request){
+        // DB::table('targets')->save($request);
+    
+        Target::create([
+            'name' => $request->name,
+            'ranking' => $request->ranking
+        ]);
+        dd($request -> all());
+
+        return view('create');
+
+        //  echo ('hola');
     }
     
 }
