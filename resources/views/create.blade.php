@@ -7,6 +7,7 @@
   <div class="container">
 
     <form action="/create" method="POST">
+    @if(count($errors) > 0  )
     <div class="alert alert-danger ">
     @foreach ($errors->all() as $messages)
 <li>
@@ -16,6 +17,8 @@
 
     </div>
      
+      @endif
+  
 
       <button type="submit" class="btn btn-primary right action_submit">Create</button>
        @csrf
