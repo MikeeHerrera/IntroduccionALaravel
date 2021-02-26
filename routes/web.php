@@ -44,7 +44,8 @@ Route::get('create','TargetController@create');
 Route::post('create','TargetController@store');
 Route::get('create','TargetController@data');
 
-Route::get('edit','TargetController@edit');
+Route::get('edit/{target}','TargetController@edit') ;
+Route::put('edit/{target}','TargetController@update');
 
 
 //delete para create

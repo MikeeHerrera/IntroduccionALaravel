@@ -27,8 +27,17 @@ class TargetController extends Controller
         return view('create');
     }
     
-    public function edit(){
-        return view('edit');
+    public function edit(Target $target){
+        return view('edit', compact('target'));
+
+    }
+    public function update(TargetRequest $request, Target $target){
+        Target::where('id' , $target -> id)
+        -> update([
+           'name' => $request->name,
+           'ranking' => $request -> ranking
+        ]);
+        return redirect('index');
     }
 
     public function store(TargetRequest $request){

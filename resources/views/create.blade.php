@@ -44,7 +44,7 @@
   <td>{{$a->name}}</td>
   <td>{{$a->ranking}}</td>
   <td class="action_td">
-      <a href="#"><button type="button" class="btn btn-info">Edit</button></a>
+      <a href="/edit/{{$a ->id}}"><button type="button" class="btn btn-info">Edit</button></a>
       <a  href="{{route('index',$a->id)}}" ><button  type="button" class="btn btn-danger">Delete</button></a>
   </td>
 </tr>
